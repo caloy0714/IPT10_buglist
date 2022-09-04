@@ -1,11 +1,11 @@
 <?php
 $client = new Client();
 $headers = [
-  'Authorization' => '{{NdQe03YgKb1pf9fMufhWVLtCBmMGloXs}}',
+  'Authorization' => 'NdQe03YgKb1pf9fMufhWVLtCBmMGloXs',
   'Content-Type' => 'application/json'
 ];
 $body = '{
-  "caloy0714@gmail.com": "test note",
+  "text": "caloy0714@gmail.com",
   "view_state": {
     "name": "public"
   }
