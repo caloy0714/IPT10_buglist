@@ -1,8 +1,10 @@
-<?php 
-
+<?php
 include "vendor/autoload.php";
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request;
+define('TOKEN', 'NdQe03YgKb1pf9fMufhWVLtCBmMGloXs');
+define('MANTISHUB_URL', 'https://ipt10-2022.mantishub.io/api/rest/issues?page_size=10&page=1');
+
 
 $client = new Client();
 $headers = [
@@ -12,17 +14,14 @@ $request = new Request('GET', 'https://ipt10-2022.mantishub.io/api/rest/issues?p
 $res = $client->sendAsync($request)->wait();
 $bugs = $res->getBody()->getContents();
 
-define('TOKEN', 'NdQe03YgKb1pf9fMufhWVLtCBmMGloXs');
-define('MANTISHUB_URL', 'https://ipt10-2022.mantishub.io/');
-
 $bugs_list = json_decode($bugs);
 
 foreach ($bugs_list->issues as $bug)
 {
 	echo '<li>' . $bug->id . ' ' .
-    $bug->summary . ' - ' .
-    $bug->severity->name . ' - ' .
-    $bug->status->name . "\n";
+$bug->summary . ' - ' .
+$bug->severity->name . ' - ' .
+$bug->status->name . "\n";
 }
 ?>
 <!DOCTYPE html>
