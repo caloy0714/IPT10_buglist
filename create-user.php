@@ -5,9 +5,9 @@ $headers = [
   'Content-Type' => 'application/json'
 ];
 $body = '{
-  "username": "Carlitos S. Bernardino",
-  "password": "BSIT3A",
-  "real_name": "Carlitos",
+  "username": "Caloy",
+  "password": "123",
+  "real_name": "Carlitos S. Bernardino",
   "email": "bernardino.carlitos@auf.edu.ph",
   "access_level": {
     "name": "updater"
