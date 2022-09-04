@@ -5,7 +5,7 @@ $headers = [
   'Content-Type' => 'application/json'
 ];
 $body = '{
-  "Carlitos S. Bernardino": "Sample REST issue",
+  "summary": "Carlitos S. Bernardino",
   "description": "Description for sample REST issue.",
   "additional_information": "More info about the issue",
   "project": {
