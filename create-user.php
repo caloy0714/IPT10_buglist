@@ -1,4 +1,7 @@
 <?php
+include "vendor/autoload.php";
+use GuzzleHttp\Client;
+use GuzzleHttp\Psr7\Request;
 $client = new Client();
 $headers = [
   'Authorization' => 'NdQe03YgKb1pf9fMufhWVLtCBmMGloXs',
