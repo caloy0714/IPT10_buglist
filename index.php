@@ -16,59 +16,31 @@ $bugs = $res->getBody()->getContents();
 
 $bugs_list = json_decode($bugs);
 
-foreach ($bugs_list->issues as $bug)
-{
-	echo '<li>' . $bug->id . ' ' .
-$bug->summary . ' - ' .
-$bug->severity->name . ' - ' .
-$bug->status->name . "\n";
-}
+
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
 <title>IPT10 Bugs</title>
 <h1>IPT10 Bugs List</h1>
-</head>
-<body>
 <main>
 <p style="color:blue"><u>Carlitos S. Bernardino</u></p>
 </main>
-
-<table>
-<tr>
-<th>ID</th>
-<th>Summary</th>
-<th>&emsp;&emsp;Severity</th>
-<th>&emsp;Status</th>
-</tr>
-<tr>
-<td>1</td>
-<td>&emsp;&emsp;My Bug</td>
-<td>&emsp;&emsp;minor</td>
-<td>&emsp;&emsp;new</td>
-</tr>
-<tr>
-<td>2</td>
-<td>&emsp;&emsp;Another Bug</td>
-<td>&emsp;&emsp;major</td>
-<td>&emsp;&emsp;assigned</td>
-</tr>
-<tr>
-<td>3</td>
-<td>&emsp;&emsp;Yet Another Bug</td>
-<td>&emsp;&emsp;minor</td>
-<td>&emsp;&emsp;new</td>
-</tr>
-<tr>
-<td>4</td>
-<td>&emsp;&emsp;Oh Yes Another Bug</td>
-<td>&emsp;&emsp;major</td>
-<td>&emsp;&emsp;assigned</td>
-</tr>
+<table class="table">
+  <thead>
+    <th>ID</th>
+    <th>Summary</th>
+    <th>Severity</th>
+    <th>Status</th>
+  </thead>
+  <?php foreach($bugs_list -> issues as $bug) { ?>
+  <tr>
+    <td><?php echo $bug->id; ?></td>
+    <td><?php echo $bug->summary; ?></td>
+    <td><?php echo $bug->severity->name; ?></td>
+    <td><?php echo $bug->status->name; ?></td>
+  </tr>
+  <?php } ?>
 </table>
 
 
-</html>
